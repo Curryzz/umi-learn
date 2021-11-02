@@ -1,16 +1,19 @@
 import React from 'react';
-
-
+import Navlink from 'umi/navlink'
+import styles from './index.css'
 
 export default function Index(props){
     return(
         <div>
             <div>
-                <h1>导航菜单</h1>
-
+                <Navlink to="/" exact activeClassName={styles.active}>首页</Navlink>
+                <Navlink to="/welcome"  activeClassName={styles.active}>欢迎页</Navlink>
+                <Navlink to="/login"  activeClassName={styles.active}>登录页</Navlink>
             </div>
-            {props.children}
-            <div><h1>页脚</h1></div>
+            <div>
+                {props.children}
+            </div>
+
         </div>
     )
 }

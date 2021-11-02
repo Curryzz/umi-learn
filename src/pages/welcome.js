@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function a (){
+export default function Welcome (){
     return (
         <div>
-            a页面
+            欢迎页面
         </div>
     )
 }
