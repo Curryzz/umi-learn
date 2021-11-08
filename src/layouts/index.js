@@ -1,19 +1,25 @@
 import React from 'react';
 import Navlink from 'umi/navlink'
 import styles from './index.css'
+import Layout from "../components/Layout";
+import Menu from '../components/containers/MenuContainer';
+import Aside from '../components/Aside'
 
 export default function Index(props){
-    return(
-        <div>
-            <div>
-                <Navlink to="/" exact activeClassName={styles.active}>首页</Navlink>
-                <Navlink to="/welcome"  activeClassName={styles.active}>欢迎页</Navlink>
-                <Navlink to="/login"  activeClassName={styles.active}>登录页</Navlink>
-            </div>
-            <div>
-                {props.children}
-            </div>
 
-        </div>
-    )
+    console.log(props)
+    if (props.location.pathname == "/login"){
+        return props.children
+    }
+    else{
+        return(
+            <Layout
+                header={<Menu/>}
+                aside={<Aside/>}
+                main={<div className={styles.main}>
+                    {props.children}
+                </div>}
+            />
+        )
+    }
 }
