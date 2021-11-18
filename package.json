@@ -9,7 +9,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "umi-plugin-react": "^1.15.8"
+  },
   "devDependencies": {
     "mockjs": "^1.1.0"
   }

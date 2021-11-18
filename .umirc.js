@@ -1,4 +1,9 @@
 export default {
+    plugins:[
+        ["umi-plugin-react",{
+            dva:true
+        }]
+    ],
     routes: [
         {
             path: '/',
@@ -6,13 +11,13 @@ export default {
             exact:false,
             routes:[
                 {path:'/',component:'./index',title: "首页",
-                    Routes:["./src/routes/HandleTitle.js"]
-                },
-                {path:'/welcome',component:'./welcome',title: "欢迎页",
-                    Routes:["./src/routes/PrivateRouter.js","./src/routes/HandleTitle.js"]
+                    Routes:['./src/router/PrivateRouter']
                 },
                 {path:'/login',component:'./login',title: "登录页",
-                    Routes:["./src/routes/HandleTitle.js"]
+                },
+                {path:'/student',component:'./student',title: "学生查询",
+                },
+                {path:'/student/add',component:'./student/add',title: "添加学生",
                 }
             ]
         },
